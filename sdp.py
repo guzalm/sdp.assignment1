@@ -9,7 +9,7 @@ class NotificationManager:
     def send_notification(self, message, strategy):
         strategy.send(message)
 
-# Strategy Pattern (NotificationStrategy)
+# Strategy Pattern
 class NotificationStrategy:
     def send(self, message):
         pass
@@ -28,15 +28,15 @@ class PushNotificationStrategy(NotificationStrategy):
 
 # Client Code
 def main():
-    # Singleton Pattern: Get an instance of the NotificationManager
+    # Singleton Pattern
     notification_manager = NotificationManager()
 
-    # Strategy Pattern: Use different notification strategies
+    # Strategy Pattern
     email_strategy = EmailNotificationStrategy()
     sms_strategy = SMSNotificationStrategy()
     push_strategy = PushNotificationStrategy()
 
-    # Send notifications using the NotificationManager
+    # Send notifications
     notification_manager.send_notification("important news!", email_strategy)
     notification_manager.send_notification("planned meeting reminder!", sms_strategy)
     notification_manager.send_notification("new notification!", push_strategy)

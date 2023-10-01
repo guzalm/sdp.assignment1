@@ -26,7 +26,6 @@ class PushNotificationStrategy(NotificationStrategy):
     def send(self, message):
         print(f"Sending Push Notification: {message}")
 
-# Client Code
 def main():
     # Singleton Pattern
     notification_manager = NotificationManager()
@@ -36,7 +35,7 @@ def main():
     sms_strategy = SMSNotificationStrategy()
     push_strategy = PushNotificationStrategy()
 
-    # Send notifications
+
     notification_manager.send_notification("important news!", email_strategy)
     notification_manager.send_notification("planned meeting reminder!", sms_strategy)
     notification_manager.send_notification("new notification!", push_strategy)
